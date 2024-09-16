@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title><%= locals.title %></title>
+     <meta name="description" content="<%= locals.description %>">
+     <link rel="stylesheet" href="/css/style.css">
+     <link rel="stylesheet" href="/css/map.css">
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+       <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css" />
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        <link rel="stylesheet" href="https://edihasaj.github.io/leaflet-coord-projection/coord-projection.css" />
+      <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.css" /> -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css" />
+    
+</head>
+<body>
+             <%- body %>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.6.0/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     <script type="text/javascript" src="https://edihasaj.github.io/leaflet-coord-projection/coord-projection.js"></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+     <script src="./js/jquery.js"></script>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+         integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+         
+          <script src="https://unpkg.com/geojson-vt@3.2.0/geojson-vt.js"></script>
+
+             <script type="text/javascript" defer src="/js/proj4.js"></script>
+             <script type="text/javascript" defer src="/js/proj4leaflet.js"></script>
+             <script defer src="https://unpkg.com/shpjs@latest/dist/shp.js"></script>
+             <script type="text/javascript" defer src="/js/jsts.min.js"></script>
+             <script src="https://unpkg.com/shp-write@latest/shpwrite.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+             <!-- <script src="https://cdn.jsdelivr.net/npm/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script> -->
+              <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+                <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js">
+                </script>
+                <!-- <script src="https://cdn.jsdelivr.net/npm/@turf/turf/turf.min.js"></script> -->
+                <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+                <!-- <script src="https://cdn.jsdelivr.net/npm/@turf/jsts@1.0.0-beta2/dist/jsts.min.js"></script> -->
+             
+
+
+
+                <script src="https://unpkg.com/leaflet-editable@1.2.0/src/Leaflet.Editable.js"></script>
+              <script type="text/javascript" defer src="/js/map.js"></script>
+              
+              <script type="text/javascript" defer src="/js/script.js"></script>
+</body>
+</html>

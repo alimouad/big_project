@@ -1,0 +1,132 @@
+ <div class="side">
+     <h5 class="user"> Hello <%= data.username %>!</h5>
+     <div class="menu">
+        <div class="tool">
+            <div class="flex">
+                <h4 class="tool_title"><i class="ph ph-globe-hemisphere-east"></i>Base Maps</h4>
+                <a  class="up">
+                    <i class="uil uil-arrow-down"></i></a>
+            </div>
+            <div class='items'>
+                <div>
+                    <input type="radio" id="osm" name="basemap" value="OpenStreetMap"  />
+                    <label for="osm">OpenStreetMap</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="imagery" name="basemap" value="Imagery" checked />
+                    <label for="imagery">Imagery</label>
+                </div>
+
+                <!-- <div>
+                    <input type="radio" id="satellite" name="basemap" value="Satellite" />
+                    <label for="satellite">Satellite</label>
+                </div> -->
+                <div>
+                    <input type="radio" id="esri" name="basemap" value="Esri" />
+                    <label for="esri">Esri Map</label>
+                </div>
+                <div>
+                    <input type="radio" id="GoogleMap" name="basemap" value="GoogleMap" />
+                    <label for="GoogleMap">Google Map</label>
+                </div>
+            </div>
+        </div>
+        <div class="tool">
+            <div class="import">
+                 <div class="flex">
+                     <h4 class="tool_title"><i class="ph ph-download-simple"></i>Import</h4>
+                     <a  class="up">
+                         <i class="uil uil-arrow-down"></i></a>
+                 </div>
+                 <div class="items">
+                  <div class="flex">
+                    <div class="btn">
+                    <label for="geojson-file" type="button">GJSON</label>
+                    <input type='file' style="display: none" id="geojson-file" accept=".geojson">
+                </div>
+                <div class="btn">
+                    <label for="shape-file" type="button">SHP</label>
+                    <input type='file' style="display: none" id="shape-file" accept=".zip">
+                </div>
+                <!-- <div class="btn">
+                </div>
+                
+                    <label for="kml-file" type="button">Import KML file</label>
+                    <input type='file' style="display: none" id="kml-file" accept=".kml">
+                </div>
+                 -->
+                 </div>
+                 </div>
+             
+            </div>
+        </div>
+        <!-- <div class="tool">
+            <div class="flex"> 
+                <h4 class="tool_title"><i class="ph ph-download-simple"></i>Load Data</h4>
+            <a  class="up">
+                <i class="uil uil-arrow-down"></i></a>
+            </div>
+           <div class="items">
+            <button class="btn" onclick="loadGeoJSON()">Add Data</button>
+           </div>
+            
+        </div> -->
+        
+        <div class="tool">
+            <div class="flex">
+                <h4 class="tool_title"><i class="ph ph-stack"></i>Layers</h4>
+                <a class="up">
+                    <i class="uil uil-arrow-down"></i></a>
+            </div>
+            <div class="items data flex">
+           
+            </div>
+        </div>
+        <div class="tool">
+            <div class="flex">
+                <h4 class="tool_title"><i class="ph ph-nut"></i>Tools</h4>
+                <a class="up">
+                    <i class="uil uil-arrow-down"></i></a>
+            </div>
+            <div class="items flex">
+                <div class="flex">
+                   <a class="tl"><i class="ph ph-push-pin-simple"></i></a>
+                    <span class="query tol" onclick="showQuery()">Layer Filtring</span>
+                </div>
+                <div class="flex">
+                     <a class="tl"><i class="ph ph-push-pin-simple"></i></a>
+                     <span class="buffer tol" onclick="showAnaTool()">Analysis Tools </span>
+                </div>
+            </div>
+        </div>
+        <div class="tool">
+            <div class="flex">
+                <h4 class="tool_title"><i class="ph ph-binoculars"></i>Search</h4>
+                <a class="up">
+                    <i class="uil uil-arrow-down"></i></a>
+            </div>
+            <div class="items flex">
+                <form action="#" onsubmit="return false;">
+                     <div class="geoCor flex">
+                        <input type="text" name="lat" id="lat" placeholder="Latitude" >
+                        <input type="text" name="lon" id="lon" placeholder="Longitude" >
+                        <button class="btn" id="btnGeo" ><i class="ph ph-binoculars"></i></button>
+                   </div>
+                </form>
+          <form action="#" onsubmit="return false;">
+             <div class="cartCor flex">
+                <input type="text" name="x" id="x" placeholder="X" >
+                <input type="text" name="y" id="y" placeholder="Y" >
+                <button class="btn btnCar disabled" id="btnCar"><i class="ph ph-binoculars"></i></button>
+             </div>
+          </form>
+            
+           </div>
+           
+            </div>
+        </div>
+     </div>
+
+     <button class="btn logout" id="logout">Logout</button>
+ </div>

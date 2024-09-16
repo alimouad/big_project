@@ -1,0 +1,147 @@
+// document.getElementById('geojson-file').addEventListener('change', function (event) {
+//     const file = event.target.files[0];
+//     if (!file) return;
+
+//     const reader = new FileReader();
+//     reader.onload = function (e) {
+//         let geojson = JSON.parse(e.target.result);
+//         console.log('GeoJSON to upload:', geojson);  // Log the geojson before sending
+ 
+//         // Send the GeoJSON data to the server
+//         fetch('/upload-geojson', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+//             body: JSON.stringify(geojson)
+//         })
+//             .then(response => response.text())  // First, read the response as text
+//             .then(data => {
+//                 console.log('Response received:', data);  // Log the raw response
+//                 try {
+//                     const json = JSON.parse(data);  // Try parsing it as JSON
+//                     console.log('Upload successful:', json);
+//                 } catch (e) {
+//                     console.error('Response is not valid JSON:', e);
+//                 }
+//             })
+//             .catch(error => console.error('Error uploading GeoJSON:', error));
+//     };
+
+//     reader.readAsText(file); // Read the file as text
+//     alert('the file ulpoaded successfully')
+// });
+// Route to retrieve GeoJSON from the PostGIS database
+
+
+
+
+
+
+
+
+
+// var drawnFeatures = new L.LayerGroup().addTo(map);  // Layer group for drawn features
+
+// // Set up event listener for when layers are edited
+// map.on('pm:edit', (e) => {
+//     const editedLayer = e.layer;  // Get the edited layer
+
+//     // Optionally bind a popup displaying GeoJSON data
+//     editedLayer.bindPopup(`<p>${JSON.stringify(editedLayer.toGeoJSON())}</p>`).openPopup();
+
+//     // Add the edited layer to the 'drawnFeatures' LayerGroup
+//     drawnFeatures.addLayer(editedLayer);
+// });
+
+// map.pm.addControls({
+//     positions: {
+//         draw: 'topright',
+//         edit: 'topright',
+//     },
+//     editControls: true,
+//     drawMarker: true,
+//     drawPolyline: false,
+//     drawCircle: false,
+//     drawText: true,
+//     drawCircleMarker: false,
+//     removalMode: true,
+//     rotateMode: false,
+//     layerGroup: drawnItems
+// });
+
+
+
+
+// // Initialize Leaflet Draw with the FeatureGroup
+// // const drawControl = new L.Control.Draw({
+// //     edit: {
+// //         featureGroup: drawnItems // Specify the FeatureGroup for editing
+// //     },
+// //     draw: true // Disable drawing tools if you only want editing
+// // });
+// // map.addControl(drawControl);
+
+
+// fetch('/get-geojson')
+//         .then(response => response.json())
+//         .then(data => {
+//             const geojsonLayer = L.geoJSON(data);
+//             geojsonLayer.eachLayer(function (layer) {
+//                 drawnItems.addLayer(layer); // Add each layer to the FeatureGroup
+//             });
+
+//             // Fit the map's bounds to the GeoJSON layer
+//             map.fitBounds(drawnItems.getBounds());
+//         })
+//         .catch(err => console.error('Error fetching GeoJSON:', err));
+
+
+// map.on('draw:edited', function (e) {
+//     var layers = e.layers;
+//     layers.eachLayer(function (layer) {
+//         const updatedGeoJSON = layer.toGeoJSON();
+
+//         // Check that the GeoJSON object has both geometry and properties
+//         if (updatedGeoJSON.properties && updatedGeoJSON.geometry) {
+//             // Send updated GeoJSON to the server
+//             fetch('/save-geojson', {
+//                 method: 'POST',
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+//                 body: JSON.stringify(updatedGeoJSON)  // Convert the object to a JSON string
+//             })
+//                 .then(response => response.json())
+//                 .then(data => {
+//                     console.log('Update successful:', data);
+//                 })
+//                 .catch(error => console.error('Error updating GeoJSON:', error));
+//         }
+//     })
+//         ;
+// });
+
+
+
+
+
+
+
+<div id="attributeTableContainer" class="attribute-table-container">
+    <div class="tools-btn flex">
+        <button class="btn save " id="saveTable"><i class="ph ph-floppy-disk"></i></button>
+        <button class="btn save download" id="saveFile"><i class="ph ph-file-arrow-down"></i></button>
+    </div>
+
+    <table id="attributeTable">
+        <thead>
+            <tr id="attributeTableHeader">
+                <!-- Table headers will be generated here -->
+            </tr>
+        </thead>
+        <tbody id="attributeTableBody">
+            <!-- Table rows will be generated here -->
+        </tbody>
+    </table>
+</div>
